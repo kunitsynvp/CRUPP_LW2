@@ -14,27 +14,27 @@ rl.question("Введите количество строк (N): ", (n) => {
         let matrix = [];
         let i = 0;
 
-        // function inputRow() {
-        //     if (i < rows) {
-        //         rl.question(
-        //             `Введите ${cols} чисел через пробел для строки ${i + 1}: `,
-        //             (input) => {
-        //                 const row = input.split(" ").map(Number);
+        function inputRow() {
+            if (i < rows) {
+                rl.question(
+                    `Введите ${cols} чисел через пробел для строки ${i + 1}: `,
+                    (input) => {
+                        const row = input.split(" ").map(Number);
 
-        //                 if (row.length !== cols || row.some(isNaN)) {
-        //                     console.log("Ошибка ввода. Попробуйте снова.");
-        //                     return inputRow();
-        //                 }
+                        if (row.length !== cols || row.some(isNaN)) {
+                            console.log("Ошибка ввода. Попробуйте снова.");
+                            return inputRow();
+                        }
 
-        //                 matrix.push(row);
-        //                 i++;
-        //                 inputRow();
-        //             }
-        //         );
-        //     } else {
-        //         findMin();
-        //     }
-        // }
+                        matrix.push(row);
+                        i++;
+                        inputRow();
+                    }
+                );
+            } else {
+                findMin();
+            }
+        }
 
         function findMin() {
             let min = matrix[0][0];
