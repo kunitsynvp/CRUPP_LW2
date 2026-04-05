@@ -5,7 +5,6 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-Ввод размеров матрицы
 rl.question("Введите количество строк (N): ", (n) => {
     rl.question("Введите количество столбцов (M): ", (m) => {
         const rows = parseInt(n);
